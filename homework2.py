@@ -37,4 +37,20 @@ End If
 Display "The shipping charge for your package is $", shippingCharge
 
 
+Process: Declare Real packageWeight, shippingCharge
+
+Output: "Enter the weight of the package you want to ship: "
+Input: packageWeight
+
+Process: If packageWeight <= 2 Then
+Process:    shippingCharge = packageWeight * 1.10
+Process: Else If packageWeight > 2 and packageWeight <= 6 Then
+Process:     shippingCharge = packageWeight * 2.20
+Process: Else If packageWeight > 6 and packageWeight <= 10 Then
+Process:     shippingCharge = packageWeight * 3.70
+Process: Else
+Process:     shippingCharge = packageWeight * 3.80
+Process: End If
+
+Output: "The shipping charge for your package is $", shippingCharge
 """
